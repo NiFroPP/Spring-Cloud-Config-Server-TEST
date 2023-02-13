@@ -1,0 +1,75 @@
+# Database settings
+spring:
+  datasource:
+    password: postgres
+    url: jdbc:postgresql://10.104.10.23:5432/lgs_develop
+    username: postgres
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        enable_lazy_load_no_trans: true
+#        format_sql: true
+#    show-sql: true
+  liquibase:
+    change-log: classpath:/db/changelog/liquibase-changelog.xml
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+# JWT settings
+jwt:
+  token:
+    expired: 7200000
+    rememberTime: 604800000
+    secret: jwt_lgs_token_secret
+# Liquibase logging setting
+logging:
+  level:
+    liquibase: INFO
+# System settings
+system-settings:
+  customerName: Test
+  superUser: lodsuper
+  superUserPassword: password
+  defaultLanguage: de-DE
+  autosaveInterval: 10000
+  finisherUploadType: master
+  exchangeImages: true
+  saveOnLayers: false
+  authMaxAttempts: 3
+  authLockMinutes: 10
+  htmlDefaultVariant: de1
+  htmlPreviewGenerationURL: http://10.104.10.23:8140/render
+  deeplKey: e8d8f7bf-b3c6-5b06-44ee-c41ddc79b251:fx
+  deeplApi: https://api-free.deepl.com/v2/translate
+  deeplPageLimit: 1
+  deeplSplittingTags: sup,sub,b,i
+  supportedFileTypes:
+    html: true
+    indd: true
+  email-settings:
+    from: Language Guide Local Demo System <noreply@intexsoft.by>
+    smtpHost: mail.intexsoft.by
+    smtpPort: 587
+    smtpUsername: lgs-team@intexsoft.by
+    smtpPassword: lgs-team
+    smtpStarttls: true
+    sendOneMessageOnTodoStatusChange: true
+    maxDeadlineEmailNotifications: 1
+    workingDaysNotify: 2
+  file-system-settings:
+    workflowDir: "workflows"
+    mainSystemDir: "/data/lgs/InddPool/lgs_develop"
+    projectRootDir: "/data/lgs/InddPool/lgs_develop/documents"
+    imagesDir: "/data/lgs/InddPool/lgs_develop/images"
+    tempDir: "/data/lgs/InddPool/lgs_develop/temp"
+    indesignScriptsDir: '\\omv2.intexsoft.by\export\lgsnfs-lgs\InddPool\lgs_develop\scripts\CC2019\'
+    mainWinDir: '\\omv2.intexsoft.by\export\lgsnfs-lgs\InddPool\lgs_develop'
