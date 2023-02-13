@@ -37,7 +37,7 @@ logging:
 # System settings
 system-settings:
   customerName: Test
-  superUser: lodsuper
+  superUser: lodsuperr
   superUserPassword: password
   defaultLanguage: de-DE
   autosaveInterval: 10000
