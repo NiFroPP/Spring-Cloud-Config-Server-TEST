@@ -53,7 +53,7 @@ system-settings:
   deeplPageLimit: 1
   deeplSplittingTags: sup,sub,b,i
   supportedFileTypes:
-    html: true
+    html: false
     indd: true
   email-settings:
     from: Language Guide Local Demo System <noreply@intexsoft.by>
